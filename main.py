@@ -35,7 +35,7 @@ def main():
 
     # Health check for MCP server before starting
     try:
-        response = requests.get("http://localhost:8081/healthz", timeout=10)
+        response = requests.get("http://localhost:8000/healthz", timeout=10)
         if response.status_code != 200:
             print(f"MCP Server health check failed: {response.text}")
             return

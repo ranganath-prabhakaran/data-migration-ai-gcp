@@ -182,6 +182,15 @@ class MCPRequestHandler(BaseHTTPRequestHandler):
     # Class-level attribute to hold the config, loaded once at server start
     server_config = None
 
+    def do_GET(self):
+        if self.path == '/healthz':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b'ok')
+        else:
+            self.send_error(404, 'File Not Found')
+
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length)
