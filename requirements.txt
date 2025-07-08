@@ -1,0 +1,7 @@
+pyautogen==0.6.1
+google-cloud-secret-manager==2.20.0
+google-generativeai==0.7.1
+requests==2.32.3
+python-json-logger==2.0.7
+subprocess.run==0.0.8
+autogen-ext-tools==0.0.2
